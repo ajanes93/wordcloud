@@ -10,9 +10,9 @@ interface MouseEvents {
 }
 
 interface MenuStyle {
-    right?: number | null
-    left?: number | null
-    bottom?: string | null
+    right?: number
+    left?: number
+    bottom?: string
 }
 
 const hover = ref(false)
@@ -33,9 +33,9 @@ const menuStyle = computed((): MenuStyle => {
     const yThreshold = position.y > window.innerHeight / 2
 
     return {
-        right: xThreshold ? 0 : null,
-        left: !xThreshold ? 0 : null,
-        bottom: yThreshold ? '100%' : null
+        right: xThreshold ? 0 : undefined,
+        left: !xThreshold ? 0 : undefined,
+        bottom: yThreshold ? '100%' : undefined
     }
 })
 </script>
