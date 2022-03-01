@@ -34,16 +34,20 @@ export const useTopicsStore = defineStore({
             try {
                 const topics = await topicsService.fetchTopicsList()
 
+                // Set topics sorted in descending order by volume
                 this.topics = topics.sort((a, b) => b.volume - a.volume)
 
                 this.$patch((state) => {
+                    // Get all volumes sorted in ascending order
                     const volumes = topics.map((topic) => topic.volume).sort((a, b) => a - b)
                     const volumeRanges: number[][] = []
 
+                    // Split volumes array into n chunks
                     for (let i = state.maxRangeItems; i > 0; i--) {
                         volumeRanges.push(volumes.splice(0, Math.ceil(volumes.length / i)))
                     }
 
+                    // Set [min, max] volumeRanges for each chunk
                     state.volumeRanges = volumeRanges.map((range) => {
                         return [Math.min(...range), Math.max(...range)]
                     })
@@ -57,14 +61,19 @@ export const useTopicsStore = defineStore({
         topicsFormatted(): TopicFormatted[] {
             return this.topics.map((topic) => {
                 const { volume, sentimentScore } = topic
-                const rangeIndex = this.volumeRanges.findIndex(([min, max]) => volume >= min && volume <= max)
-                let size = 1
-                let color: TopicColor
 
+                // Find index of volume in volumeRanges (used to calculate font size)
+                const rangeIndex = this.volumeRanges.findIndex(([min, max]) => volume >= min && volume <= max)
+
+                let color: TopicColor
+                let size = 1
+
+                // Calculate font size based on rangeIndex
                 if (rangeIndex > 0) {
                     size = rangeIndex + 0.4
                 }
 
+                // Get sentiment color based on sentiment score
                 if (sentimentScore > this.positiveThreshold) {
                     color = 'green'
                 } else if (sentimentScore < this.negativeThreshold) {

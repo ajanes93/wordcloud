@@ -4,11 +4,12 @@
 >
 const props = withDefaults(
     defineProps<{
+        /**
+         * The size of the spinner
+         */
         size: number
     }>(),
-    {
-        size: 16
-    }
+    { size: 16 }
 )
 </script>
 

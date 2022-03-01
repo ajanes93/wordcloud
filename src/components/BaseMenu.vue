@@ -45,6 +45,7 @@ const menuStyle = computed((): MenuStyle => {
         ref="menu"
         class="relative"
     >
+        <!-- @slot activator -->
         <slot
             name="activator"
             :on="events"
@@ -55,6 +56,7 @@ const menuStyle = computed((): MenuStyle => {
             :style="menuStyle"
         >
             <div class="bg-gray-100 p-3 rounded-md shadow-xl">
+                <!-- @slot menu -->
                 <slot name="menu"></slot>
             </div>
         </div>

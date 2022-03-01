@@ -8,11 +8,29 @@ import { Sentiment } from '../models/topic.model'
 import BaseMenu from './BaseMenu.vue'
 
 const props = defineProps<{
+    /**
+     * The topic ID
+     */
     id: string
+    /**
+     * The topic label
+     */
     label: string
+    /**
+     * The topic size (Used for setting the font size using `em`)
+     */
     size: number
+    /**
+     * The color of the topic
+     */
     color: TopicColor
+    /**
+     * The volume count for the topic
+     */
     volume: number
+    /**
+     * The sentiment breakdown
+     */
     sentiment: Sentiment
 }>()
 
