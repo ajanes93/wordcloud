@@ -1,6 +1,82 @@
-# Vue 3 + Typescript + Vite
+# Word Cloud
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple project that displays a word cloud using [topics data](https://gist.githubusercontent.com/grahamscott/65b43572ad18c5fbdd87/raw/d755523d6a281695e3b882db8c115ff37fc070fa/topics.json).
+
+## Browser Support
+
+The following [Browserlist compatible query](https://github.com/browserslist/browserslist) is used
+with the `@vitejs/plugin-legacy` to provide browser support for the following:
+
+`'defaults', 'Chrome >= 62', 'Safari >= 11', 'Edge >= 40', 'Firefox >= 57'`
+
+## Built with:
+
+-   Vue 3
+-   Pinia
+-   Axios
+-   Vite
+-   Vitest
+-   Typescript
+-   Tailwind CSS
+-   Eslint & Prettier
+
+## CI/CD tooling
+
+-   husky
+-   lint-staged
+-   GitHub Actions
+
+## Project setup
+
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run dev
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+### Preview the built files (should be run after the build command)
+
+```
+npm run preview
+```
+
+## Linting and formatting
+
+### Lints and fixes files
+
+```
+npm run lint
+```
+
+### Formats code using Prettier
+
+```
+npm run format
+```
+
+## Testing
+
+### Run tests in watch mode
+
+```
+npm run test:watch
+```
+
+### Run tests and generate junit and coverage reports
+
+```
+npm run test
+```
 
 ## Recommended IDE Setup
 
