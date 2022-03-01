@@ -14,6 +14,9 @@ const props = withDefaults(
 
 <template>
     <div class="flex items-center justify-center">
-        <div :class="`w-${props.size} h-${props.size} border-b-2 border-gray-900 rounded-full animate-spin`"></div>
+        <div
+            data-testid="spinner"
+            :class="`w-${props.size} h-${props.size} border-b-2 border-gray-900 rounded-full animate-spin`"
+        ></div>
     </div>
 </template>
