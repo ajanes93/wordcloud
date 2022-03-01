@@ -1,6 +1,9 @@
 # Word Cloud
 
 A simple project that displays a word cloud using [topics data](https://gist.githubusercontent.com/grahamscott/65b43572ad18c5fbdd87/raw/d755523d6a281695e3b882db8c115ff37fc070fa/topics.json).
+The production version is available via GitHub Pages:
+
+[Word Cloud On GitHub Pages](https://ajanes93.github.io/wordcloud/)
 
 ## Browser Support
 
